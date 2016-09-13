@@ -11,12 +11,13 @@ class ArrayToDotConverter implements DataConverterContract
         return $this->flatten($data);
     }
 
-    protected function flatten($data, $keys = [], &$result = [])
+    protected function flatten($data, $keys = [])
     {
+        $result = [];
         foreach ($data as $key => $value) {
             $newKeys = array_merge($keys, [$key]);
             if (is_array($value)) {
-                $this->flatten($value, $newKeys, $result);
+                $result = array_merge($result, $this->flatten($value, $newKeys));
             } else {
                 $key = implode('.', $newKeys);
                 $result[$key] = $value;
