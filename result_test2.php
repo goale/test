@@ -19,6 +19,6 @@ $converted = Collection::parse($data1, new DotToArrayConverter());
 
 print_r($converted);
 
-$original = Collection::parse($data1, new ArrayToDotConverter());
+$original = Collection::parse($converted, new ArrayToDotConverter());
 
 print_r($original);
