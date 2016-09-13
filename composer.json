@@ -1,0 +1,17 @@
+{
+    "name": "alex/adv-test",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alex Goncharov",
+            "email": "eins.two@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Oakoae\\": "src/"
+        }
+    }
+}
